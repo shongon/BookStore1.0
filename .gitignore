@@ -1,0 +1,12 @@
+bin/Execute/DatabaseConnector.class
+bin/Execute/Main.class
+bin/Model/Author.class
+bin/Model/Book.class
+bin/Model/Category.class
+bin/Model/Publication.class
+bin/Query/AuthorQueries.class
+bin/Query/BookQueries.class
+bin/Query/CategoryQueries.class
+bin/Query/PublicationQueries.class
+README.md
+.vscode/settings.json
