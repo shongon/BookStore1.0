@@ -2,6 +2,7 @@ package Execute;
 
 import java.sql.Connection;
 
+import Query.AuthorQueries;
 import Query.PublicationQueries;
 
 public class Main {
@@ -16,7 +17,7 @@ public class Main {
 
             //Publication Queries
                 //Add new publication
-                PublicationQueries.insertNewPublication(29,"Phu Nu");
+                // PublicationQueries.insertNewPublication(29,"Phu Nu");
                 // Get all infor by publication id
                 // PublicationQueries.getAllByID(1);
                 
@@ -29,10 +30,24 @@ public class Main {
                 // PublicationQueries.deleteAllByID(26);
 
             //Author Queries
-                //.
+                //Add new author
+                // AuthorQueries.insertNewAuthor(38, "To Hoai");
+                //Get infor by author id
+                // AuthorQueries.getAuthorByID(38);
+                //Update author by author id
+                // AuthorQueries.updateAuthorByID(38, "Nguyen Nhat Anh");
+                //Delete author by author id
+                // AuthorQueries.deleteAuthorByID(38);
 
             //Category Queries
-                //.
+                //Add new category
+                
+                //Get infor by category id
+                
+                //Update author by category id
+                
+                //Delete author by category id
+                
 
         //Close connection
         System.out.println();

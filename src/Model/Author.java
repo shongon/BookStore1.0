@@ -5,10 +5,10 @@ public class Author {
     private String authorName;
 
     //Constructors
-    public Author(int authorID, String authorName){
-        this.authorID = authorID;
-        this.authorName = authorName;
-    }
+    // public Author(int authorID, String authorName){
+    //     this.authorID = authorID;
+    //     this.authorName = authorName;
+    // }
     //Get & Set
     public int getAuthorID(){
         return authorID;
