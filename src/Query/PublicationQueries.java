@@ -6,35 +6,61 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 
 import Model.Publication;
 
 public class PublicationQueries {
+    // Insert new object
+    public static boolean insertNewPublication (int publicationID, String publicationName){
+        String insertQuery = "INSERT INTO publications (publication_id, publication_name) VALUES (?,?)";
+        
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
 
+                preparedStatement.setInt(1, publicationID);
+                preparedStatement.setString(2, publicationName);
+
+                int rowAffected = preparedStatement.executeUpdate();
+
+                if (rowAffected > 0) {
+                    System.out.println("Add new publication successfully!");
+                    return true;
+                } else {
+                    System.out.println("Failed to add new publication.");
+                    return false;
+                }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     //Get all info by publcation ID
     public static ArrayList<Publication> getAllByID(int publicationID) {
         ArrayList<Publication> publications = new ArrayList<>();
-        String query = "SELECT * FROM publications WHERE publication_id = " + publicationID;
+        String query = "SELECT * FROM publications WHERE publication_id = ?";
 
         try (Connection connection = DatabaseConnector.connect();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(query)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             
-                while (resultSet.next()) {
-                    Publication publication = new Publication();
-                    publication.setPublicationID(resultSet.getInt("publication_id"));
-                    publication.setPublicationName(resultSet.getString("publication_name"));
+                preparedStatement.setInt(1,publicationID);
+                try (ResultSet resultSet = preparedStatement.executeQuery()){
 
-                    publications.add(publication);
-                }
-
-                for (Publication publication : publications) {
-                    System.out.println("Publication ID: " + publication.getPublicationID());
-                    System.out.println("Publication Name: " + publication.getPublicationName());
-                    System.out.println("----------------------------");
+                    while (resultSet.next()) {
+                        Publication publication = new Publication();
+                        publication.setPublicationID(resultSet.getInt("publication_id"));
+                        publication.setPublicationName(resultSet.getString("publication_name"));
+    
+                        publications.add(publication);
+                    }
+    
+                    for (Publication publication : publications) {
+                        System.out.println("Publication ID: " + publication.getPublicationID());
+                        System.out.println("Publication Name: " + publication.getPublicationName());
+                        System.out.println("----------------------------");
+                    }
                 }
         } catch (SQLException e) {
             e.printStackTrace();

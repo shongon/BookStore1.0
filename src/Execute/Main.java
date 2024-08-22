@@ -1,7 +1,6 @@
 package Execute;
 
 import java.sql.Connection;
-// import java.sql.Connection;
 
 import Query.PublicationQueries;
 
@@ -16,16 +15,18 @@ public class Main {
                 //.
 
             //Publication Queries
+                //Add new publication
+                PublicationQueries.insertNewPublication(29,"Phu Nu");
                 // Get all infor by publication id
-                PublicationQueries.getAllByID(1);
+                // PublicationQueries.getAllByID(1);
                 
 
                 // Update publication name by publication id
-                PublicationQueries.updateNameByID(1, "Hoa Hoc Tro");
+                // PublicationQueries.updateNameByID(1, "Hoa Hoc Tro");
 
 
                 //Delete all infor by publication id
-                PublicationQueries.deleteAllByID(26);
+                // PublicationQueries.deleteAllByID(26);
 
             //Author Queries
                 //.
