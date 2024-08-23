@@ -3,6 +3,8 @@ package Execute;
 import java.sql.Connection;
 
 import Query.AuthorQueries;
+import Query.BookQueries;
+import Query.CategoryQueries;
 import Query.PublicationQueries;
 
 public class Main {
@@ -13,7 +15,14 @@ public class Main {
 
         //Methods
             //Book Queries
-                //.
+                // Add new book
+                // BookQueries.insertNewBook(41, "Co tich Viet Name", 3, 4, 1000, "Out Stock", 0, 500, 1, 300, 150, 75);
+                // Get book infor by id
+                // BookQueries.getBookByID(41);
+                // Update book (ratings, reviews) by id
+                // BookQueries.updateBookByID(41, 175, 200);
+                // Delete book by id
+                // BookQueries.deleteBookByID(41);
 
             //Publication Queries
                 //Add new publication
@@ -41,13 +50,13 @@ public class Main {
 
             //Category Queries
                 //Add new category
-                
+                // CategoryQueries.insertNewCategory(14, "Comedy");
                 //Get infor by category id
-                
+                // CategoryQueries.getCategoryByName("Comedy");
                 //Update author by category id
-                
+                // CategoryQueries.updateCategoryByName("Comedy", "Horror");
                 //Delete author by category id
-                
+                // CategoryQueries.deleteCategoryByName("Horror");
 
         //Close connection
         System.out.println();

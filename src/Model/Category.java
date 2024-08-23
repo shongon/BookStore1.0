@@ -4,10 +4,10 @@ public class Category {
     private String categoryName;
 
     //Constructors
-    public Category(int categoryID, String categoryName){
-        this.categoryID = categoryID;
-        this.categoryName = categoryName;
-    }
+    // public Category(int categoryID, String categoryName){
+    //     this.categoryID = categoryID;
+    //     this.categoryName = categoryName;
+    // }
 
     //Get & Set
     public int getCategoryID(){

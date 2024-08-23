@@ -15,21 +15,21 @@ public class Book {
 
     
     //Contructors
-    public Book(int bookID, String title, int authorID, int categoryID, int price, String stockStatus, int copiesLeft,
-            int length, int publicationID, int wishedUsers, int ratings, int reviews) {
-        this.bookID = bookID;
-        this.title = title;
-        this.authorID = authorID;
-        this.categoryID = categoryID;
-        this.price = price;
-        this.stockStatus = stockStatus;
-        this.copiesLeft = copiesLeft;
-        this.length = length;
-        this.publicationID = publicationID;
-        this.wishedUsers = wishedUsers;
-        this.ratings = ratings;
-        this.reviews = reviews;
-    }
+    // public Book(int bookID, String title, int authorID, int categoryID, int price, String stockStatus, int copiesLeft,
+    //         int length, int publicationID, int wishedUsers, int ratings, int reviews) {
+    //     this.bookID = bookID;
+    //     this.title = title;
+    //     this.authorID = authorID;
+    //     this.categoryID = categoryID;
+    //     this.price = price;
+    //     this.stockStatus = stockStatus;
+    //     this.copiesLeft = copiesLeft;
+    //     this.length = length;
+    //     this.publicationID = publicationID;
+    //     this.wishedUsers = wishedUsers;
+    //     this.ratings = ratings;
+    //     this.reviews = reviews;
+    // }
 
     //Get & Set
     public int getBookID() {
